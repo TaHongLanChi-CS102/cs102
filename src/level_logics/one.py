@@ -33,7 +33,7 @@ def event_handler(world: World) -> None:
                 quest_name=QuestName.TRAMPOLINE,
             ).post()
 
-            world.player.discard_inventory(TRAMPOLINE_PART_TYPES)
+            world.player.discard_inventorys(TRAMPOLINE_PART_TYPES)
 
             # NPC makes the trampoline
             npc = world.get_entity(npc_chu_nam_id)

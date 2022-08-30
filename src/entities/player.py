@@ -71,6 +71,15 @@ class Player(AnimatedEntity):
             return len(self.inventory)
         return len([entity for entity in self.inventory if entity.entity_type in entity_types])
 
+    def count_inventorys(self, entity_types: Iterable[EntityType] = tuple()) -> int:
+        """
+        Returns the number of collected entities,
+        ALL of them or FILTERED by some give EntityType(s).
+        """
+        if not entity_types:
+            return len(self.inventory)
+        return len([entity for entity in self.inventory if entity.entity_type == entity_types[2]])
+
     def discard_inventory(self, entity_types: Iterable[EntityType] = tuple()) -> None:
         """
         Discards certain types of entities from Player inventory.
